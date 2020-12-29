@@ -1,0 +1,132 @@
+/* ***Given values*** */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* ***General set-up*** */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 15px;
+  background-color: hsl(0, 0%, 98%);
+}
+
+h1.bold {
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+}
+
+h1.light {
+  font-weight: 400;
+  color: hsl(229, 6%, 66%);
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+p {
+  font-weight: 200;
+  color: hsl(229, 6%, 66%);
+  font-size: 0.8em;
+}
+
+/* ***Header set-up*** */
+
+header {
+  text-align: center;
+}
+
+p {
+  padding: 1em 0 4em 0;
+}
+
+/* ***GRID set-up*** */
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0 2em;
+  grid-template-areas:
+    ". teamBuilder ."
+    "supervisor teamBuilder calculator"
+    "supervisor karma calculator"
+    ". karma .";
+  padding: 0 20em;
+}
+
+.box {
+  padding: 20px;
+  border: 1px;
+  outline-style: solid;
+  outline-width: medium;
+  margin-bottom: 2em;
+  display: flex;
+  flex-flow: column;
+}
+
+.supervisor {
+  grid-area: supervisor;
+  outline-color: cyan;
+}
+
+.teamBuilder {
+  grid-area: teamBuilder;
+  outline-color: red;
+}
+
+.karma {
+  grid-area: karma;
+  outline-color: orange;
+}
+
+.calculator {
+  grid-area: calculator;
+  outline-color: blue;
+}
+
+/* ***BOXES set-up*** */
+
+img {
+  align-self: flex-end;
+}
+
+/* ***Responsive Design*** NOT WORKING*/
+
+@media (max-width: 1200px) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "supervisor"
+      "teamBuilder"
+      "karma"
+      "calculator";
+  }
+  .supervisor {
+    grid-area: supervisor;
+  }
+  .teamBuilder {
+    grid-area: teamBuilder;
+  }
+  .karma {
+    grid-area: karma;
+  }
+  .calculator {
+    grid-area: calculator;
+  }
+}

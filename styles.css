@@ -69,9 +69,7 @@ p {
 
 .box {
   padding: 20px;
-  border: 1px;
-  outline-style: solid;
-  outline-width: medium;
+  border-radius: 10px;
   margin-bottom: 2em;
   display: flex;
   flex-flow: column;
@@ -79,22 +77,23 @@ p {
 
 .supervisor {
   grid-area: supervisor;
-  outline-color: cyan;
+  box-shadow: 0 -5px 0 0 cyan, 0 -3px 0 0 cyan;
+  padding: 20px;
 }
 
 .teamBuilder {
   grid-area: teamBuilder;
-  outline-color: red;
+  box-shadow: 0 -5px 0 0 red, 0 -3px 0 0 red;
 }
 
 .karma {
   grid-area: karma;
-  outline-color: orange;
+  box-shadow: 0 -5px 0 0 orange, 0 -3px 0 0 orange;
 }
 
 .calculator {
   grid-area: calculator;
-  outline-color: blue;
+  box-shadow: 0 -5px 0 0 blue, 0 -3px 0 0 blue;
 }
 
 /* ***BOXES set-up*** */
@@ -103,20 +102,23 @@ img {
   align-self: flex-end;
 }
 
-/* ***Responsive Design*** NOT WORKING*/
+/* ***Responsive Design*** */
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   .main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
+    padding-left: 3em;
+    padding-right: 3em;
     grid-template-areas:
       "supervisor"
       "teamBuilder"
       "karma"
       "calculator";
   }
+
   .supervisor {
     grid-area: supervisor;
   }
